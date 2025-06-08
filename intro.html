@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Intro</title>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="styles/intro.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+  <video id="introVideo" autoplay muted playsinline webkit-playsinline>
+    <source src="assets/Videos/intro.mp4" type="video/mp4">
+  </video>
+  <button id="saltarIntro">SALTAR INTRO (ESC)</button>
+
+  <script>
+    const video = document.getElementById('introVideo');
+    const saltarBtn = document.getElementById('saltarIntro');
+    
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    
+    video.addEventListener('canplay', () => {
+      video.play().catch(e => console.log('Auto-play prevented:', e));
+    });
+    
+    video.addEventListener('ended', () => {
+      window.location.href = 'pantallaInicio.html';
+    });
+    
+    saltarBtn.addEventListener('click', () => {
+      window.location.href = 'pantallaInicio.html';
+    });
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter') {
+        window.location.href = 'pantallaInicio.html';
+      }
+    });
+    
+    document.addEventListener('click', (e) => {
+      if (e.target === document.body) {
+        window.location.href = 'pantallaInicio.html';
+      }
+    });
+    
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden && video.paused) {
+        video.play();
+      }
+    });
+  </script>
+</body>
+</html>

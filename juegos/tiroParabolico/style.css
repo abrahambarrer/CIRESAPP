@@ -1,0 +1,150 @@
+
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Press Start 2P', cursive; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#gameCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+
+.controles-superiores {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+  z-index: 1000;
+}
+
+button {
+  background-color: #153243;
+  color: white;
+  border: 2px solid white;
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+
+.boton-regreso {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 12px 20px;
+  font-size: 14px;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+
+
+
+button:hover {
+  transform: scale(1.1);
+  background-color: #ffffff;
+  color: #153243;
+  border-color: #153243;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+input[type=range] {
+  height: 10px;
+  border-radius: 5px;
+  background: #ddd;
+  outline: none;
+  z-index: 1000;
+  position: relative;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+  border: 2px solid white;
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 150px;
+  height: 10px;
+  background: #ddd; 
+  border-radius: 5px;
+  outline: none;
+  margin: 10px 0;
+  z-index: 1000;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4CAF50; 
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+#gameCanvas div:nth-of-type(1) input[type=range] {
+  background: linear-gradient(to right, #FFA500, #FF8C00);
+}
+
+#gameCanvas div:nth-of-type(2) input[type=range] {
+  background: linear-gradient(to right, #4CAF50, #2E7D32);
+}
+
+#gameCanvas div:nth-of-type(1) input[type=range]::-webkit-slider-thumb {
+  background: #FFA500;
+}
+
+#gameCanvas div:nth-of-type(2) input[type=range]::-webkit-slider-thumb {
+  background: #4CAF50;
+}
+#gameCanvas p {
+  pointer-events: none; 
+  user-select: none; 
+}
+
+#icono-volver {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#icono-volver:hover {
+  opacity: 0.7;
+}

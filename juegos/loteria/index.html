@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="shortcut icon" href="#">
+  <title>Carrusel de Cartas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <img id="icono-volver" src="../../assets/Iconos/volver.png" alt="Volver" /> 
+
+    <div id="intro-overlay" class="intro-overlay">
+      <div class="intro-content">
+        <h2>¡Lotería!</h2>
+        <button id="start-button">¡Comenzar!</button>
+      </div>
+    </div>
+
+    <div id="loader">
+      <div class="loadingio-spinner-blocks-2by998twmg8">
+        <div class="ldio-yzaezf3dcmj">
+          <div style="left:32px;top:32px;animation-delay:0s"></div>
+          <div style="left:80px;top:32px;animation-delay:0.125s"></div>
+          <div style="left:128px;top:32px;animation-delay:0.25s"></div>
+          <div style="left:32px;top:80px;animation-delay:0.875s"></div>
+          <div style="left:128px;top:80px;animation-delay:0.375s"></div>
+          <div style="left:32px;top:128px;animation-delay:0.75s"></div>
+          <div style="left:80px;top:128px;animation-delay:0.625s"></div>
+          <div style="left:128px;top:128px;animation-delay:0.5s"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-container">
+        <button id="btn-prev" disabled>&lt</button>
+        <div class="carousel">
+            <!-- Cartas -->
+        </div>
+        <button id="btn-next">></button>
+    </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

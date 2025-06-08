@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Memorama</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <img id="icono-volver" src="../../assets/Iconos/volver.png" alt="Volver" />
+  <div class="info-panel">
+    <div id="time">Tiempo: 0s</div>
+    <div id="attempts">Intentos: 0</div>
+    <div id="matches">Pares: 0/28</div>
+  </div>
+  <button id="resetButton">Reiniciar</button>
+
+  <main>
+    <div class="grid" id="game-board"></div>
+  </main>
+
+  <!-- Audios -->
+  <audio id="flip-sound" src="sounds/cardFlip.mp3" preload="auto"></audio>
+  <audio id="match-sound" src="sounds/match.wav" preload="auto"></audio>
+  <audio id="bg-music" src="sounds/love-8-bit.mp3" loop preload="auto"></audio>
+
+  <div id="overlay" style="display: none;">
+    <h2>¡Completado!</h2>
+    <p id="final-score"></p>
+    <button id="newGame">Nueva Partida</button>
+    <button onclick="backToMenu()">Salir</button>
+  </div>
+
+  <script src="memorama.js"></script>
+</body>
+</html>

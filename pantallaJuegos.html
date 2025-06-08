@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pantalla de Juegos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/pantallaJuegos.css" />
+</head>
+<body>
+  <!-- Fondo animado de círculos -->
+  <div class="area">
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+
+  <div class="contenedor-juegos">
+    <header class="header">
+      <h1 class="titulo">CIRESGAMES</h1>
+      <h2 class="subtitulo">Dr. Dario</h2>
+    </header>
+
+    <div class="botones-actividades">
+      <div class="actividades-container1">
+        <a id="actividad1-link" href="juegos/memorama/index.html" style="display: none;"></a>
+        <button class="actividad-btn" data-actividad="1">
+          Memorama
+          <video src="assets/Videos/memorama.mp4" muted loop class="video-hover"></video>
+        </button>
+        <a id="actividad2-link" href="juegos/loteria/index.html" style="display: none;"></a>
+        <button class="actividad-btn" data-actividad="2">
+          Lotería
+          <video src="assets/Videos/loteria.mp4" muted loop class="video-hover"></video>
+        </button>
+        <a id="actividad3-link" href="juegos/sums/index.html" style="display: none;"></a>
+        <button class="actividad-btn" data-actividad="3">
+          Sums
+          <video src="assets/Videos/sums.mp4" muted loop class="video-hover"></video>
+        </button>
+      </div>
+      <div class="actividades-container2">
+        <a id="actividad4-link" href="juegos/mathBox/index.html" style="display: none;"></a>
+        <button class="actividad-btn" data-actividad="4">
+          MathBox
+          <video src="assets/Videos/mathbox.mp4" muted loop class="video-hover"></video>
+        </button>
+        <a id="actividad5-link" href="juegos/tiroParabolico/index.html" style="display: none;"></a>
+        <button class="actividad-btn" data-actividad="5">
+          Tiro Parabólico
+          <video src="assets/Videos/tiroParabolico.mp4" muted loop class="video-hover"></video>
+        </button>
+        <a id="actividad6-link" href="juegos/hanoi/index.html" style="display: none;"></a>
+        <button class="actividad-btn" data-actividad="6">
+          Torre de Hanoi
+          <video src="assets/Videos/hanoi.mp4" muted loop class="video-hover"></video>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú desplegable-->
+    <div id="menu" class="menu-desplegable">
+      <h3>Opciones</h3>
+      <button class="opcion-btn iniciar-btn">Iniciar</button>
+      <button class="opcion-btn ranking-btn" 
+        id="ranking-1" 
+        style="display: none;"
+        onclick="window.location.href='juegos/memorama/ranking/pantallaRankingMemorama.html'">
+        Ranking
+      </button>
+      <button class="opcion-btn ranking-btn" 
+              id="ranking-3" 
+              style="display: none;"
+              onclick="window.location.href='juegos/sums/ranking/pantallaRankingSums.html'">
+        Ranking
+      </button>
+      <button class="opcion-btn ranking-btn" 
+              id="ranking-4" 
+              style="display: none;"
+              onclick="window.location.href='juegos/mathBox/ranking/pantallaRankingMathBox.html'">
+        Ranking
+      </button>
+      <button class="opcion-btn ranking-btn" 
+              id="ranking-5" 
+              style="display: none;"
+              onclick="window.location.href='juegos/tiroParabolico/ranking/pantallaRankingTiroParabolico.html'">
+        Ranking
+      </button>
+      <button class="opcion-btn ranking-btn" 
+              id="ranking-6" 
+              style="display: none;"
+              onclick="window.location.href='juegos/hanoi/ranking/pantallaRankingHanoi.html'">
+        Ranking
+      </button>
+    </div>
+
+    <div class="boton-regreso-container">
+      <a href="pantallaInicio.html">
+        <button class="boton-regresar">Regresar</button>
+      </a>
+    </div>
+  </div>
+
+  <div class="contenedor-iconos">
+    <a href="https://www.uv.mx/" target="_blank" class="icono-uv" rel="noreferrer"></a>
+    <div class="icono-sonido sonido-activado" id="iconoSonido"></div>
+    <div class="icono-volver" id="icono-volver"></div>
+  </div>  
+
+  <script>
+    // Variable para almacenar la actividad seleccionada
+    let actividadSeleccionada = null;
+
+    // Mostrar el menú al hacer clic en un botón de actividad
+    document.querySelectorAll('.actividad-btn').forEach((button) => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        actividadSeleccionada = this.dataset.actividad;
+        
+        const menu = document.getElementById('menu');
+        const rect = button.getBoundingClientRect();
+        const rankingBtn = document.getElementById('btnRankingSums');
+        
+        // Mostrar u ocultar el botón Ranking según la actividad
+        document.querySelectorAll('.ranking-btn').forEach(btn => btn.style.display = 'none');
+
+        // Mostrar solo el ranking correspondiente
+        const rankingActual = document.getElementById(`ranking-${actividadSeleccionada}`);
+        if (rankingActual) {
+          rankingActual.style.display = 'block';
+        }
+        
+        menu.style.top = `${rect.top + window.scrollY - menu.offsetHeight - 5}px`;
+        menu.style.left = `${rect.left + window.scrollX}px`;
+        menu.classList.toggle('mostrar');
+      });
+    });
+
+    // Cerrar el menú si se hace clic fuera de él
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('menu');
+      const botonesActividad = document.querySelectorAll('.actividad-btn');
+
+      if (!menu.contains(event.target) && !Array.from(botonesActividad).some(btn => btn.contains(event.target))) {
+        menu.classList.remove('mostrar');
+      }
+    });
+
+    // Iniciar la actividad seleccionada
+    document.querySelector('.iniciar-btn').addEventListener('click', function() {
+      if (actividadSeleccionada) {
+        window.location.href = document.getElementById(`actividad${actividadSeleccionada}-link`).href;
+      }
+    });
+
+    // Agregar comportamiento de hover en los videos
+    document.querySelectorAll('.actividad-btn').forEach(button => {
+      const video = button.querySelector('video');
+      button.addEventListener('mouseenter', () => video.play());
+      button.addEventListener('mouseleave', () => video.pause());
+    });
+
+    // Cambiar el icono de sonido
+    const icono = document.getElementById('iconoSonido');
+    icono.addEventListener('click', () => {
+      icono.classList.toggle('sonido-activado');
+      icono.classList.toggle('sonido-desactivado');
+    });
+
+    // Cambiar de página al hacer clic en el icono de volver
+    document.getElementById("icono-volver").addEventListener("click", function() {
+      window.location.href = "pantallaInicio.html"; 
+    });
+
+    // Recuperar el nombre ingresado y mostrarlo
+    const nombreGuardado = localStorage.getItem('nombreUsuario');
+    if (nombreGuardado) {
+      document.querySelector('.subtitulo').textContent = nombreGuardado;
+    }
+  </script>
+</body>
+</html>

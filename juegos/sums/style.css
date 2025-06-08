@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 35px;
+}
+
+body {
+    text-align: center;
+    color: #fffff6;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+h1 {
+    padding: 30px;
+    font-size: 36px;
+    color: #ffffff;
+}
+
+.contenedor {
+    max-width: 530px;
+    max-width: 640px;
+    margin: auto;
+    background-image: url('assets/startPicture.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: none;
+    padding: 50px 0;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.izquierdo {
+    width: 70%;
+    font-size: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.derecha {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.men {
+    font-size: 40px;
+    height: 50px;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+.opcion {
+    width: 80px;
+    height: 80px;
+    border: 2px solid rgb(170, 87, 87);
+    font-size: 32px;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    border-radius: 50%; 
+    cursor: pointer;
+    background-color: #80bcdf;
+    color: rgb(172, 57, 57);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.opcion:hover {
+    transform: scale(1.1);
+    background-color: #ee3d3d;
+    color: #153243;
+    border-color: #153243;
+}
+
+.opcion:active {
+    transform: scale(0.95);
+}
+
+.opcion:hover {
+    background-color: blueviolet;
+    transform: scale(1.1);
+}
+
+.opcion:active {
+    background-color: #ff6347;
+    transform: scale(1);
+}
+
+#info {
+    margin-top: 30px;
+    font-size: 22px;
+    color: #ffffff;
+}
+
+#puntos, #errores, #cronometro {
+    margin-top: 10px;
+    background-color: #fbc531;
+    color: white;
+    border: 2px solid white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    display: inline-block;
+    /*transition: transform 0.2s ease, background-color 0.2s ease;*/
+}
+
+#puntos:active, #errores:active, #cronometro:active {
+    transform: scale(0.95);
+}
+
+#menj {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-left: 50px;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+#menj.EXCELENTE {
+    color: #0011ff;
+}
+
+#menj.INTENTA {
+    color: red;
+}
+
+/* Estilo para el contenedor de información (puntos, errores y cronómetro) */
+#info {
+    margin: 50px auto 35px auto;
+    text-align: center;
+    font-size: 22px;
+    z-index: 2;
+    position: relative;
+}
+
+
+#reiniciar {
+    margin: 40px;
+    background-color: #153243;
+    color: white;
+    border: 2px solid white;
+    padding: 8px 16px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#reiniciar:hover {
+    transform: scale(1.1);
+    background-color: #ffffff;
+    color: #153243;
+    border-color: #153243;
+}
+
+#reiniciar:active {
+    transform: scale(0.95);
+}
+
+html {
+    height: 100%;
+}
+
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: 0.5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -2;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+#control-audio {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+#control-audio img {
+    width: 40px;
+    height: 40px;
+}
+
+#boton-volver {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+#boton-volver img {
+    width: 40px;
+    height: 40px;
+}
+
+

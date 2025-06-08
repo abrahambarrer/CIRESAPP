@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Juego de Sumas y Restas</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Fondo animado -->
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+    <!-- Información (arriba del contenedor) -->
+    <div id="info">
+        <div id="puntos">Puntos: 0</div>
+        <div id="errores">Errores: 0/3</div>
+        <div id="cronometro">Tiempo: 0s</div>
+    </div>
+
+    <!-- Contenedor principal del juego -->
+    <div class="contenedor">
+        <div class="izquierdo">
+            <div class="contenedor-operacion">
+                <span id="multiplicacion">
+                    9 x 9 =
+                </span>
+            </div>
+            <span class="resultado" id="resultado">
+                81
+            </span>
+            <span class="men" id="menj">
+                EXCELENTE!!
+            </span>
+        </div>
+        <div class="derecha">
+            <span id="op1" class="opcion" onclick="controlarRespuesta(this)">
+                81
+            </span>
+            <span id="op2" class="opcion" onclick="controlarRespuesta(this)">
+                81
+            </span>
+            <span id="op3" class="opcion" onclick="controlarRespuesta(this)">
+                81
+            </span>
+        </div>
+    </div>
+
+    <!-- Botón para reiniciar el juego -->
+    <div id="reiniciar-container">
+        <button id="reiniciar" onclick="reiniciarJuego()">Reiniciar Juego</button>
+    </div>
+
+    <!-- Botón para activar/silenciar música -->
+    <div id="control-audio">
+        <img id="icono-audio" src="assets/audio-on.png" alt="Audio On" onclick="toggleAudio()" />
+    </div>
+
+    <div id="boton-volver">
+        <img src="../../assets/Iconos/volver.png" alt="Volver" onclick="volverAlMenu()" />
+    </div>
+
+    <!-- Audio de fondo -->
+    <audio id="musicaFondo" src="sounds/sumasrestas.mp3" autoplay loop></audio>
+
+    <!-- Script para iniciar música al hacer clic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const musica = document.getElementById('musicaFondo');
+            document.addEventListener('click', function () {
+                if (musica.paused) {
+                    musica.play().catch(e => console.log("Autoplay bloqueado"));
+                }
+            }, { once: true });
+        });
+    </script>
+
+    <script src="sums.js"></script>
+</body>
+</html>

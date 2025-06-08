@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego Matemático</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  
+  <!-- Incluye la librería de p5.js -->
+  <script src="libraries/p5.min.js"></script>
+  <script src="libraries/p5.sound.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/nipplejs@0.9.0/dist/nipplejs.min.js"></script>
+</head>
+
+<body>
+  <button id="musicToggle" style="position:absolute; top:20px; right:20px; background:none; border:none; cursor:pointer;">
+    <img id="musicIcon" src="assets/audio-on.png" width="40" height="40" alt="Toggle Music">
+  </button>
+  <img id="btn-volver" src="../../assets/Iconos/volver.png" alt="Volver" />  
+
+  <button id="reiniciar">Reiniciar</button>
+
+  <div id="mensaje-fin">Juego Terminado</div>
+
+  <!-- Joystick container -->
+  <div id="joystick-zone" style="position:absolute; bottom:80px; left:80px; width:120px; height:120px; z-index:999;"></div>
+  
+  <script src="mathbox.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inicio</title>
+  <link rel="stylesheet" href="styles/pantallaInicio.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    /* Estilo para el botón Iniciar cuando está deshabilitado */
+    .boton-iniciar-deshabilitado {
+      opacity: 0.5;
+      cursor: not-allowed;
+      position: relative;
+    }
+    
+    /* Tooltip para explicar por qué está deshabilitado */
+    .boton-iniciar-deshabilitado::after {
+      content: "Debes ingresar un nombre y guardarlo";
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      white-space: nowrap;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .boton-iniciar-deshabilitado:hover::after {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Fondo animado de círculos -->
+  <div class="area">
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+
+  <div class="contenedor-inicio">
+    <audio id="musicaFondo" autoplay>
+      <source src="/assets/Music6a/musicaMenu.mp3" type="audio/mp3">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+    <h1>Universidad Veracruzana</h1>
+    <h2>Centro de Investigación en Recursos Energéticos y Sustentables</h2>
+    <h3>CIRESGAMES</h3>
+    <input type="text" id="nombreInput" placeholder="Ingresar tu nombre" class="input-nombre" />
+    <button id="botonGuardar">Guardar</button>
+  </div>
+
+  <div class="botones-container">
+    <div class="botones-principales">
+      <a href="pantallaJuegos.html" id="enlaceIniciar">
+        <button class="boton-accion boton-iniciar-deshabilitado" id="botonIniciar" disabled>Iniciar</button>
+      </a>
+      <a href="pantallaCreditos.html">
+        <button class="boton-accion">Créditos</button>
+      </a>
+    </div>
+    <div class="boton-salir">
+      <button class="boton-accion" id="botonSalir">Salir</button>
+    </div>
+  </div>
+
+  <div class="contenedor-iconos">
+    <a href="https://www.uv.mx/" target="_blank" class="icono-uv" rel="noreferrer"></a>
+    <div class="icono-sonido sonido-activado" id="iconoSonido"></div>
+  </div>
+  
+  <script src="renderer.js"></script>
+  <script src="cordova.js"></script>
+</body>
+</html>

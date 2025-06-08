@@ -1,0 +1,210 @@
+body {
+    font-family: "Questrial", sans-serif;
+    background-color: #28AD56;
+    background-image: linear-gradient(
+        80deg,
+        #18529D 25%,
+        transparent 25%,
+        transparent 75%,
+        #18529D 75%,
+        #18529D
+      ),
+      linear-gradient(
+        -20deg,
+        #18529D 25%,
+        transparent 25%,
+        transparent 75%,
+        #18529D 75%,
+        #18529D
+      );
+    background-size: 60px 60px;
+    background-position: 0 0;
+    animation: slide 4s infinite linear;
+    margin: 0;
+    padding: 0;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: -120px 60px; }
+}
+
+.header {
+    text-align: center;
+    padding: 20px 0;
+    flex-shrink: 0;
+}
+
+.university {
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.center-name {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.game-title {
+    font-size: 36px;
+    color: #fbc531;
+    margin-bottom: 20px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.content-box {
+    background-color: rgba(21, 50, 67, 0.8);
+    border: 4px solid #fbc531;
+    border-radius: 15px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    flex-grow: 1;
+}
+
+.section-title {
+    color: #fbc531;
+    border-bottom: 2px solid #fbc531;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+}
+
+.game-section {
+    margin-bottom: 25px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.player-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.player-row:hover {
+    background-color: rgba(251, 197, 49, 0.2);
+    transform: translateX(5px);
+}
+
+.player-rank {
+    font-weight: bold;
+    width: 40px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.player-name {
+    flex-grow: 1;
+    margin: 0 15px;
+    text-align: left;
+}
+
+.player-score {
+    font-family: 'Press Start 2P', cursive;
+    color: #7aa7c7;
+    min-width: 100px;
+    text-align: right;
+}
+
+.player-time {
+    color: #7aa7c7;
+    font-size: 14px;
+    margin-left: 15px;
+    font-family: 'Press Start 2P', cursive;
+    min-width: 60px;
+    text-align: right;
+}
+
+.gold { color: #ffd700; }
+.silver { color: #c0c0c0; }
+.bronze { color: #cd7f32; }
+
+.action-btn {
+    padding: 12px 25px;
+    background-color: #fbc531;
+    color: #153243;
+    border: 2px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    transition: all 0.3s;
+    display: block;
+    margin: 20px auto;
+}
+
+.action-btn:hover {
+    transform: scale(1.1);
+    background-color: white;
+    color: #153243;
+    border-color: #153243;
+}
+
+/* Iconos */
+.contenedor-iconos {
+    position: relative;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+.icono-sonido, .icono-uv, .icono-volver {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.icono-sonido {
+    background-image: url('assets/Iconos/audio-on.png');
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.icono-uv {
+    background-image: url('assets/Iconos/icono-uv.png');
+    top: 20px;
+    right: 70px;
+}
+
+.icono-volver {
+    background-image: url('assets/Iconos/volver.png');
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.sonido-activado { background-image: url('assets/Iconos/audio-on.png'); }
+.sonido-desactivado { background-image: url('assets/Iconos/audio-off.png'); }
+
+.icono-sonido:hover,
+.icono-uv:hover,
+.icono-volver:hover {
+    opacity: 0.7;
+    transform: scale(1.1);
+}

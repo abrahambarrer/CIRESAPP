@@ -1,0 +1,90 @@
+    @keyframes color {
+    0%   { background: #33CCCC; }
+    20%  { background: #33CC36; }
+    40%  { background: #B8CC33; }
+    60%  { background: #FCCA00; }
+    80%  { background: #33CC36; }
+    100% { background: #33CCCC; }
+  }
+
+  body {
+    background: #33CCCC; /* Fallback */
+    animation: color 9s infinite linear;
+    text-align: center;
+    padding: 2em;
+  }
+  h1 {
+    text-align: center;
+    font-family: 'Kavoon', sans-serif;
+    font-size: 2.5em;
+    color: white;
+  }
+
+  canvas {
+    border: #103513 3px solid;
+  }
+
+  #btn-volver {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  #btn-volver:hover {
+    opacity: 0.7;
+  }
+
+  #reiniciar {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    /* margin: 40px; */
+    background-color: #153243;
+    color: white;
+    border: 2px solid white;
+    padding: 8px 16px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#reiniciar:hover {
+    transform: scale(1.1);
+    background-color: #ffffff;
+    color: #153243;
+    border-color: #153243;
+}
+
+#reiniciar:active {
+    transform: scale(0.95);
+}
+
+#mensaje-fin {
+  display: none;
+  color: red;
+  font-size: 32px;
+  font-family: 'Press Start 2P', cursive;
+  position: absolute;
+  top: 380px;
+  right: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border: 3px solid red;
+  border-radius: 10px;
+  z-index: 100;
+}
+
+#joystick-zone {
+  position: absolute;
+  bottom: 80px;
+  left: 80px;
+  width: 120px;
+  height: 120px;
+  z-index: 999;
+  touch-action: none; /* Muy importante en móviles */
+}

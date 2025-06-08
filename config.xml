@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.ciresgames" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>CIRESGAMES</name>
+    <description>Sample Apache Cordova App</description>
+    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
+        Apache Cordova Team
+    </author>
+    <preference name="Orientation" value="landscape" /> <!-- ORIENTACION DE LA APP (LANDSCAPE = HORIZONTAL) (PORTRAIT = VERTICAL) -->
+    <preference name="StatusBarOverlays" value="true" /> <!-- SOBREPONER LA BARRA EN EL CONTENIDO -->
+    <preference name="Fullscreen" value="true" /> <!-- PANTALLA COMPLETA -->
+    <icon src="platforms\android\app\src\main\res\mipmap-hdpi\logo_2.jpg"/> <!-- PARA LA DIRECCION DEL ICONO -->
+    <preference name="WebViewBounce" value="true" />
+    <preference name="HideKeyboardFormAccessoryBar" value="true" /> <!-- ESCONDER LA BARRA DE HERRAMIENTAS -->
+    <content src="intro.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+</widget>
