@@ -17,7 +17,8 @@ const overlay = document.getElementById("overlay");
 const finalScore = document.getElementById("final-score");
 const newGameButton = document.getElementById("newGame");
 const totalPairs = images.length; // número total de pares
-
+const startOverlay = document.getElementById("start-overlay");
+const startGameBtn = document.getElementById("startGameBtn");
 
 let firstCard, secondCard;
 let lockBoard = false;
@@ -240,4 +241,11 @@ window.addEventListener('load', function() {
     volverBtn.addEventListener('click', function() {
     window.location.href = "../../pantallaJuegos.html";
   });
+});
+
+startGameBtn.addEventListener("click", () => {
+  bgMusic.play().catch(err => {
+    console.warn("No se pudo reproducir la música automáticamente:", err);
+  });
+  startOverlay.style.display = "none";
 });

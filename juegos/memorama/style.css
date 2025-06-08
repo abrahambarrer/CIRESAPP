@@ -168,3 +168,46 @@ button:active {
 #icono-volver:hover {
   opacity: 0.7;
 }
+
+#start-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75); /* semitransparente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.start-content {
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+}
+
+.start-content h1 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+#startGameBtn {
+  font-size: 1rem;
+  padding: 12px 24px;
+  background-color: #153243;
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  font-family: 'Press Start 2P';
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#startGameBtn:hover {
+  transform: scale(1.1);
+  background-color: #ffffff;
+  color: #153243;
+  border-color: #153243;
+}
